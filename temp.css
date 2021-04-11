@@ -135,6 +135,15 @@ body{
   width: 40px;
   transition: 0.5s;
 }
+#datexi{
+  position: relative;
+  float: left;
+  margin: 0;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  transition: 0.5s;
+}
 #datetext{
   position: absolute;
   top: 50%;
@@ -170,7 +179,7 @@ body{
   height: 40px;
   width: 160px;
   transition: 0.5s;
-  background-color: palevioletred;
+  background-color: #d3738b;
   z-index: 1;
 }
 #walk{
@@ -182,7 +191,7 @@ body{
   height: 40px;
   width: 120px;
   transition: 0.5s;
-  background-color: cornflowerblue;
+  background-color: #7186db;
 }
 #fishing{
   position: relative;
@@ -205,7 +214,7 @@ body{
   height: 40px;
   width: 160px;
   transition: 0.5s;
-  background-color: burlywood;
+  background-color: #f7c187;
 }
 #addnew{
   position: relative;
@@ -216,7 +225,7 @@ body{
   height: 40px;
   width: 280px;
   transition: 0.5s;
-  background-color: white;
+  background-color: #58b2a4;
 }
 #reset{
   position: relative;
@@ -227,5 +236,5 @@ body{
   height: 40px;
   width: 280px;
   transition: 0.5s;
-  background-color: #58b2a4;
+  background-color: white;
 }
