@@ -97,6 +97,12 @@ function turnonslider()
         item.removeEventListener('mouseenter', addevent);
         item.removeEventListener('mouseleave', removeevent);
       });
+      document.querySelectorAll('#date').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          this.style.backgroundColor='white';
+          this.style.color='black';
+        });
+      });
       turnonslider();
       occasionevent();
       a.id='datex';
