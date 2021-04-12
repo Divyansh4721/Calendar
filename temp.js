@@ -97,15 +97,31 @@ function turnonslider()
         item.removeEventListener('mouseenter', addevent);
         item.removeEventListener('mouseleave', removeevent);
       });
+      a.id='datex';
       document.querySelectorAll('#date').forEach(item => {
         item.addEventListener('mouseenter', function() {
           this.style.backgroundColor='white';
           this.style.color='black';
         });
       });
+      var datax=document.querySelectorAll('#datex');
+      for (let i = 0; i < datax.length; i++) {
+        $(datax[i]).prepend("</div><div id='colorslider1'></div>");
+        setTimeout(function () {
+          console.log(i);
+          datax[i].querySelector('#colorslider1').style.marginLeft='0px';
+        },i+2);
+      }
+      var dataxi=document.querySelectorAll('#datexi');
+      for (let i = 0; i < dataxi.length; i++) {
+        $(dataxi[i]).prepend("</div><div id='colorslider2'></div>");
+        setTimeout(function () {
+          console.log(i);
+          dataxi[i].querySelector('#colorslider2').style.marginLeft='0px';
+        },i+2);
+      }
       turnonslider();
       occasionevent();
-      a.id='datex';
       a.style.backgroundColor='#5da79b';
       buttonclick=3;
 

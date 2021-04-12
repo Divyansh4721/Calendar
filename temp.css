@@ -121,28 +121,53 @@ body{
   position: relative;
   float: left;
   margin: 0;
+  background-color: white;
   display: inline-block;
   height: 40px;
   width: 40px;
   transition: 0.5s;
+  z-index: 2;
+
 }
 #datex{
   position: relative;
+  overflow: hidden;
   float: left;
   margin: 0;
   display: inline-block;
   height: 40px;
   width: 40px;
   transition: 0.5s;
+  z-index: 0;
 }
 #datexi{
   position: relative;
+  overflow: hidden;
   float: left;
   margin: 0;
   display: inline-block;
   height: 40px;
   width: 40px;
   transition: 0.5s;
+  z-index: -1;
+}
+#colorslider1{
+  position: absolute;
+  margin-left: -40px;
+  background-color: #bd677d;
+  height: 40px;
+  width: 40px;
+  transition: 2s;
+  z-index: 1;
+}
+#colorslider2{
+  position: absolute;
+  margin-left: -40px;
+  background-color: #d3738b;
+  height: 40px;
+  width: 40px;
+  transition: 2s;
+  z-index: 1;
 }
 #datetext{
   position: absolute;
@@ -151,6 +176,7 @@ body{
   transform: translate(-50%,-50%);
   cursor: default;
   user-select: none;
+  z-index: 2;
 }
 #datetextextra{
   position: absolute;
