@@ -153,20 +153,18 @@ body{
 }
 #colorslider1{
   position: absolute;
-  margin-left: -40px;
-  background-color: #bd677d;
+  margin-left: 0px;
   height: 40px;
   width: 40px;
-  transition: 2s;
+  transition: 0.05s;
   z-index: 1;
 }
 #colorslider2{
   position: absolute;
-  margin-left: -40px;
-  background-color: #d3738b;
+  margin-left: 0px;
   height: 40px;
   width: 40px;
-  transition: 2s;
+  transition: 0.05s;
   z-index: 1;
 }
 #datetext{

@@ -104,71 +104,226 @@ function turnonslider()
           this.style.color='black';
         });
       });
-      var datax=document.querySelectorAll('#datex');
-      for (let i = 0; i < datax.length; i++) {
-        $(datax[i]).prepend("</div><div id='colorslider1'></div>");
-        setTimeout(function () {
-          console.log(i);
-          datax[i].querySelector('#colorslider1').style.marginLeft='0px';
-        },i+2);
-      }
-      var dataxi=document.querySelectorAll('#datexi');
-      for (let i = 0; i < dataxi.length; i++) {
-        $(dataxi[i]).prepend("</div><div id='colorslider2'></div>");
-        setTimeout(function () {
-          console.log(i);
-          dataxi[i].querySelector('#colorslider2').style.marginLeft='0px';
-        },i+2);
-      }
+
+      functionName();
       turnonslider();
-      occasionevent();
       a.style.backgroundColor='#5da79b';
       buttonclick=3;
 
     }
   }
 }
-//occasion eventlisteners
-function occasionevent()
-{
+
+function functionName() {
   $('#vacation').click(function() {
-    document.querySelectorAll('#datex').forEach(item => {
-      item.style.backgroundColor='#bd677d';
-    });
-    document.querySelectorAll('#datexi').forEach(item => {
-      item.style.backgroundColor='#d3738b';
-    });
+
+    let datax=document.querySelectorAll('#datex');
+    let dataxi=document.querySelectorAll('#datexi');
+    if(document.querySelectorAll('#colorslider1').length==0){
+      for (let i = 0; i < datax.length; i++) {
+        $(datax[i]).prepend("</div><div id='colorslider1'></div>");
+      }
+      for (let i = 0; i < dataxi.length; i++) {
+        $(dataxi[i]).prepend("</div><div id='colorslider2'></div>");
+      }
+    }
+    resetcolorslider();
+    for (let i = 0; i < document.querySelectorAll('#colorslider1').length; i++) {
+      document.querySelectorAll('#colorslider1')[i].style.backgroundColor='#bd677d';
+    }
+    for (let i = 0; i < document.querySelectorAll('#colorslider2').length; i++) {
+      document.querySelectorAll('#colorslider2')[i].style.backgroundColor='#d3738b';
+    }
+    //moving animation
+    datax[0].querySelector('#colorslider1').style.marginLeft='0px';
+    let j = 0
+    let interval=setInterval(function(){
+      let dataxi=document.querySelectorAll('#datexi');
+      if (j+1 > dataxi.length) {
+        datax[1].querySelector('#colorslider1').style.marginLeft='0px';
+        clearInterval(interval);
+      }
+      else {
+        dataxi[j].querySelector('#colorslider2').style.marginLeft='0px';
+      }
+      j++;
+    },50);
+
   });
   $('#walk').click(function() {
-    document.querySelectorAll('#datex').forEach(item => {
-      item.style.backgroundColor='#6578c5';
-    });
-    document.querySelectorAll('#datexi').forEach(item => {
-      item.style.backgroundColor='#7186db';
-    });
+
+    let datax=document.querySelectorAll('#datex');
+    let dataxi=document.querySelectorAll('#datexi');
+    if(document.querySelectorAll('#colorslider1').length==0){
+      for (let i = 0; i < datax.length; i++) {
+        $(datax[i]).prepend("</div><div id='colorslider1'></div>");
+      }
+      for (let i = 0; i < dataxi.length; i++) {
+        $(dataxi[i]).prepend("</div><div id='colorslider2'></div>");
+      }
+    }
+    resetcolorslider();
+    for (let i = 0; i < document.querySelectorAll('#colorslider1').length; i++) {
+      document.querySelectorAll('#colorslider1')[i].style.backgroundColor='#6578c5';
+    }
+    for (let i = 0; i < document.querySelectorAll('#colorslider2').length; i++) {
+      document.querySelectorAll('#colorslider2')[i].style.backgroundColor='#7186db';
+    }
+    //moving animation
+    datax[0].querySelector('#colorslider1').style.marginLeft='0px';
+    let j = 0
+    let interval=setInterval(function(){
+      let dataxi=document.querySelectorAll('#datexi');
+      if (j+1 > dataxi.length) {
+        datax[1].querySelector('#colorslider1').style.marginLeft='0px';
+        clearInterval(interval);
+      }
+      else {
+        dataxi[j].querySelector('#colorslider2').style.marginLeft='0px';
+      }
+      j++;
+    },50);
+
   });
   $('#fishing').click(function() {
-    document.querySelectorAll('#datex').forEach(item => {
-      item.style.backgroundColor='#805b7c';
-    });
-    document.querySelectorAll('#datexi').forEach(item => {
-      item.style.backgroundColor='#8f658a';
-    });
+
+    let datax=document.querySelectorAll('#datex');
+    let dataxi=document.querySelectorAll('#datexi');
+    if(document.querySelectorAll('#colorslider1').length==0){
+      for (let i = 0; i < datax.length; i++) {
+        $(datax[i]).prepend("</div><div id='colorslider1'></div>");
+      }
+      for (let i = 0; i < dataxi.length; i++) {
+        $(dataxi[i]).prepend("</div><div id='colorslider2'></div>");
+      }
+    }
+    resetcolorslider();
+    for (let i = 0; i < document.querySelectorAll('#colorslider1').length; i++) {
+      document.querySelectorAll('#colorslider1')[i].style.backgroundColor='#805b7c';
+    }
+    for (let i = 0; i < document.querySelectorAll('#colorslider2').length; i++) {
+      document.querySelectorAll('#colorslider2')[i].style.backgroundColor='#8f658a';
+    }
+    //moving animation
+    datax[0].querySelector('#colorslider1').style.marginLeft='0px';
+    let j = 0
+    let interval=setInterval(function(){
+      let dataxi=document.querySelectorAll('#datexi');
+      if (j+1 > dataxi.length) {
+        datax[1].querySelector('#colorslider1').style.marginLeft='0px';
+        clearInterval(interval);
+      }
+      else {
+        dataxi[j].querySelector('#colorslider2').style.marginLeft='0px';
+      }
+      j++;
+    },50);
+
   });
   $('#weekend').click(function() {
-    document.querySelectorAll('#datex').forEach(item => {
-      item.style.backgroundColor='#dead79';
-    });
-    document.querySelectorAll('#datexi').forEach(item => {
-      item.style.backgroundColor='#f7c187';
-    });
+
+    let datax=document.querySelectorAll('#datex');
+    let dataxi=document.querySelectorAll('#datexi');
+    if(document.querySelectorAll('#colorslider1').length==0){
+      for (let i = 0; i < datax.length; i++) {
+        $(datax[i]).prepend("</div><div id='colorslider1'></div>");
+      }
+      for (let i = 0; i < dataxi.length; i++) {
+        $(dataxi[i]).prepend("</div><div id='colorslider2'></div>");
+      }
+    }
+    resetcolorslider();
+    for (let i = 0; i < document.querySelectorAll('#colorslider1').length; i++) {
+      document.querySelectorAll('#colorslider1')[i].style.backgroundColor='#dead79';
+    }
+    for (let i = 0; i < document.querySelectorAll('#colorslider2').length; i++) {
+      document.querySelectorAll('#colorslider2')[i].style.backgroundColor='#f7c187';
+    }
+    //moving animation
+    datax[0].querySelector('#colorslider1').style.marginLeft='0px';
+    let j = 0
+    let interval=setInterval(function(){
+      let dataxi=document.querySelectorAll('#datexi');
+      if (j+1 > dataxi.length) {
+        datax[1].querySelector('#colorslider1').style.marginLeft='0px';
+        clearInterval(interval);
+      }
+      else {
+        dataxi[j].querySelector('#colorslider2').style.marginLeft='0px';
+      }
+      j++;
+    },50);
+
   });
   $('#addnew').click(function() {
-    document.querySelectorAll('#datex').forEach(item => {
-      item.style.backgroundColor='#4fa093';
-    });
-    document.querySelectorAll('#datexi').forEach(item => {
-      item.style.backgroundColor='#58b2a4';
-    });
+
+    let datax=document.querySelectorAll('#datex');
+    let dataxi=document.querySelectorAll('#datexi');
+    if(document.querySelectorAll('#colorslider1').length==0){
+      for (let i = 0; i < datax.length; i++) {
+        $(datax[i]).prepend("</div><div id='colorslider1'></div>");
+      }
+      for (let i = 0; i < dataxi.length; i++) {
+        $(dataxi[i]).prepend("</div><div id='colorslider2'></div>");
+      }
+    }
+    resetcolorslider();
+    for (let i = 0; i < document.querySelectorAll('#colorslider1').length; i++) {
+      document.querySelectorAll('#colorslider1')[i].style.backgroundColor='#4fa093';
+    }
+    for (let i = 0; i < document.querySelectorAll('#colorslider2').length; i++) {
+      document.querySelectorAll('#colorslider2')[i].style.backgroundColor='#58b2a4';
+    }
+    //moving animation
+    datax[0].querySelector('#colorslider1').style.marginLeft='0px';
+    let j = 0
+    let interval=setInterval(function(){
+      let dataxi=document.querySelectorAll('#datexi');
+      if (j+1 > dataxi.length) {
+        datax[1].querySelector('#colorslider1').style.marginLeft='0px';
+        clearInterval(interval);
+      }
+      else {
+        dataxi[j].querySelector('#colorslider2').style.marginLeft='0px';
+      }
+      j++;
+    },50);
+
   });
+}
+function resetcolorslider()
+{
+  let datax=document.querySelectorAll('#datex');
+  let dataxi=document.querySelectorAll('#datexi');
+  datax[0].style.transition='0s';
+  datax[1].style.transition='0s';
+  datax[0].querySelector('#colorslider1').style.marginLeft='-40px';
+  datax[1].querySelector('#colorslider1').style.marginLeft='-40px';
+  if($('#colorslider1').css('background-color')!='rgba(0, 0, 0, 0)'){
+    datax[0].style.backgroundColor=datax[0].querySelector('#colorslider1').style.backgroundColor;
+    datax[1].style.backgroundColor=datax[0].querySelector('#colorslider1').style.backgroundColor;
+    for (let i = 0; i < dataxi.length; i++) {
+      dataxi[i].style.transition='0s';
+      dataxi[i].querySelector('#colorslider2').style.marginLeft='-40px';
+      dataxi[i].style.backgroundColor=dataxi[i].querySelector('#colorslider2').style.backgroundColor;
+    }
+  }
+  else{
+    datax[0].style.backgroundColor='#4fa093';
+    datax[1].style.backgroundColor='#4fa093';
+    for (let i = 0; i < dataxi.length; i++) {
+      dataxi[i].style.transition='0s';
+      dataxi[i].querySelector('#colorslider2').style.marginLeft='-40px';
+      dataxi[i].style.backgroundColor='#58b2a4';
+    }
+  }
+}
+
+
+
+//reset button
+{
+  $('#reset').click(function() {
+    location.reload();
+});
 }
