@@ -1,5 +1,6 @@
 body{
   background: lightblue;
+  font-family: Comic Sans MS;
   margin: 0;
 }
 
@@ -34,7 +35,7 @@ body{
   width: 280px;
   background-color: white;
 }
-#touchouter{
+#homebutton{
   position: absolute;
   margin-top: 15px;
   left: 50%;
@@ -64,6 +65,24 @@ body{
   transform: translate(-50%,-50%);
   color: white;
   user-select: none;
+}
+#leftarr{
+  position: relative;
+  float: left;
+  margin-left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
+}
+#rightarr{
+  position: relative;
+  float: right;
+  margin-right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
 }
 #month{
   position: absolute;
@@ -171,6 +190,17 @@ body{
   user-select: none;
   z-index: 2;
 }
+#addnewbutton{
+  background-color: #58b2a4;
+  height: 30px;
+  color: black;
+  border: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  cursor: default;
+}
 #datetextextra{
   position: absolute;
   top: 50%;
@@ -179,6 +209,7 @@ body{
   transform: translate(-50%,-50%);
   cursor: default;
   user-select: none;
+  z-index: 2;
 }
 #date:hover{
   background-color:#5da79b;

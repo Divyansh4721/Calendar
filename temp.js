@@ -1,3 +1,71 @@
+//function day typing
+{
+  let currentmonth=1;
+  $('#leftarr').click(function() {
+    if (currentmonth>1) {
+      var th=document.querySelectorAll('#date');
+      $('#dates')[0].innerHTML='';
+      currentmonth--;
+      enterdays((8-(($(th[0].innerHTML)[0].innerHTML-1)%7)),currentmonth)
+    }
+  });
+  $('#rightarr').click(function() {
+    if (currentmonth<12) {
+      var th=document.querySelectorAll('#date');
+      $('#dates')[0].innerHTML='';
+      currentmonth++;
+
+      enterdays((8-$(th[th.length-1].innerHTML)[0].innerHTML),currentmonth)
+    }
+  });
+  let monthdata=['','January','February','March','April','May','June','July','August','September','October','November','December'];
+  function enterdays(day,month) {
+    $('#month')[0].innerHTML=monthdata[month]+' 2021';
+    let ndays=0;
+    if(month==1||month==3||month==5||month==7||month==8||month==10||month==12){
+      ndays=31;
+    }
+    else if(month==2){
+      ndays=28;
+    }
+    else{
+      ndays=30;
+    }
+    let extradaystart=0;
+    if(ndays==31&&currentmonth==3){
+      extradaystart=28-day+2;
+    }
+    else if(ndays==31){
+      extradaystart=30-day+2;
+    }
+    else if(ndays==30){
+      extradaystart=31-day+2;
+    }
+    else{
+      extradaystart=31-day+2;
+    }
+    let count=0;
+    for(let i=0;i<day-1;i++){
+      count++;
+      $('#dates').append('<div id="date" onclick="dateclicked(this)"><span id="datetextextra">'+(extradaystart+i)+'</span></div>');
+    }
+    for(let i=1;i<=ndays;i++){
+      count++;
+      $('#dates').append('<div id="date" onclick="dateclicked(this)"><span id="datetext">'+i+'</span></div>');
+    }
+    let dayleft=0;
+    if(count<=35){
+      dayleft=35-count;
+    }
+    else if(count<42){
+      dayleft=42-count;
+    }
+    for(let i=1;i<=dayleft;i++){
+      $('#dates').append('<div id="date" onclick="dateclicked(this)"><span id="datetextextra">'+i+'</span></div>');
+    }
+  }
+  enterdays(6,1);
+}
 function turnonslider(clickval)
 {
   let allele=document.querySelectorAll('#datex');
@@ -330,48 +398,14 @@ function resetcolorslider()
     }
   }
 }
-//function day typing
-function enterdays(day,month) {
 
-  let ndays=0;
-  if(month==1||month==3||month==5||month==7||month==8||month==10||month==12){
-    ndays=31;
-  }
-  else if(month==2){
-    ndays=28;
-  }
-  else{
-    ndays=30;
-  }
-  let extradaystart=0;
-  if(ndays==31){
-    extradaystart=31-day+2;
-  }
-  let count=0;
-  for(let i=0;i<day-1;i++){
-    count++;
-    $('#dates').append('<div id="date" onclick="dateclicked(this)"><span id="datetextextra">'+(extradaystart+i)+'</span></div>');
-  }
-  for(let i=1;i<=ndays;i++){
-    count++;
-    $('#dates').append('<div id="date" onclick="dateclicked(this)"><span id="datetext">'+i+'</span></div>');
-  }
-  let dayleft=0;
-  if(count<35){
-    dayleft=35-count;
-  }
-  else if(count<42){
-    dayleft=42-count;
-  }
-  for(let i=1;i<=dayleft;i++){
-    $('#dates').append('<div id="date" onclick="dateclicked(this)"><span id="datetextextra">'+i+'</span></div>');
-  }
-}
-enterdays(3,1);
 
 //reset button
 {
   $('#reset').click(function() {
+    location.reload();
+  });
+  $('#homebutton').click(function() {
     location.reload();
   });
 }

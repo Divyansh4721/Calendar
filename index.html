@@ -2,6 +2,7 @@
 <head>
   <title>Calendar</title>
   <link rel="stylesheet" href="temp.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="jquery-3.6.0.js"></script>
 </head>
 <body>
@@ -9,7 +10,11 @@
     <div id="speaker"></div>
     <div id="screen">
       <div id="screenhead1"><span id="calendar">CALENDAR</span></div>
-      <div id="screenhead2"><span id="month">January 2021</span></div>
+      <div id="screenhead2">
+        <i class="fa fa-angle-left" id='leftarr'></i>
+        <span id="month"></span>
+        <i class="fa fa-angle-right" id='rightarr'></i>
+      </div>
       <div id="days">
         <div id="day"><span id="daytext">SUN</span></div>
         <div id="day"><span id="daytext">MON</span></div>
@@ -26,11 +31,14 @@
         <div id="walk"><span id="occationtext">Walk</span></div>
         <div id="fishing"><span id="occationtext">Fishing</span></div>
         <div id="weekend"><span id="occationtext">Weekend</span></div>
-        <div id="addnew"><span id="occationtext">Addnew</span></div>
+        <div id="addnew">
+          <i class="fa fa-plus-circle" id='leftarr'></i>
+          <input id="addnewbutton" type="text" name="" value="" placeholder="Addnew">
+        </div>
         <div id="reset"><span id="occationtext">Reset</span></div>
       </div>
     </div>
-    <div id="touchouter"></div>
+    <div id="homebutton"></div>
   </div>
 </body>
 <script type="text/javascript" src="temp.js"></script>
