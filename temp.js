@@ -217,14 +217,30 @@ $('#trigger').click(function() {
       //#5da79b
       let buttonclick=1;
       let ab;
+      $.fn.isAfter = function(sel){
+        return this.prevAll(sel).length !== 0;
+      }
+      $.fn.isBefore= function(sel){
+        return this.nextAll(sel).length !== 0;
+      }
       function addevent() {
         this.style.backgroundColor='#5da79b';
         this.style.color='white';
-        $(ab).nextUntil(this).css("background-color", "#68baad");
-        $(ab).nextUntil(this).css("color", "white");
-        let inele=$(ab).nextUntil(this);
-        for (let i = 0; i < inele.length; i++) {
-          inele[i].id='datexi';
+        if($(ab).index()<$(this).index()){
+          $(ab).nextUntil(this).css("background-color", "#68baad");
+          $(ab).nextUntil(this).css("color", "white");
+          let inele=$(ab).nextUntil(this);
+          for (let i = 0; i < inele.length; i++) {
+            inele[i].id='datexi';
+          }
+        }
+        else{
+          $(this).nextUntil(ab).css("background-color", "#68baad");
+          $(this).nextUntil(ab).css("color", "white");
+          let inele=$(this).nextUntil(ab);
+          for (let i = 0; i < inele.length; i++) {
+            inele[i].id='datexi';
+          }
         }
       }
       function removeevent() {
@@ -235,6 +251,22 @@ $('#trigger').click(function() {
         let inele=$(ab).nextUntil(this);
         for (let i = 0; i < inele.length; i++) {
           inele[i].id='date';
+        }
+        if($(ab).index()<$(this).index()){
+          $(ab).nextUntil(this).css("background-color", "white");
+          $(ab).nextUntil(this).css("color", "black");
+          let inele=$(ab).nextUntil(this);
+          for (let i = 0; i < inele.length; i++) {
+            inele[i].id='date';
+          }
+        }
+        else{
+          $(this).nextUntil(ab).css("background-color", "white");
+          $(this).nextUntil(ab).css("color", "black");
+          let inele=$(this).nextUntil(ab);
+          for (let i = 0; i < inele.length; i++) {
+            inele[i].id='date';
+          }
         }
       }
       function dateclicked(a) {
