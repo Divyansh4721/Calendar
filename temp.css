@@ -2,17 +2,12 @@ body{
   background: lightblue;
   margin: 0;
 }
-#outer1{
-  position: absolute;
+
+#outer{
   top: 40px;
   left: 200px;
-  height: 640px;
-  width: 310px;
-  background-color: white;
-  border-radius: 50px;
-}
-#outer2{
-  position: relative;
+  border: 7px solid white;
+  position: absolute;
   margin: 5px;
   height: 630px;
   width: 300px;
@@ -44,17 +39,8 @@ body{
   margin-top: 15px;
   left: 50%;
   transform: translateX(-50%);
-  height: 60px;
-  border-radius: 50%;
-  width: 60px;
-  background-color: #a1a5b3;
-}
-#touchinner{
-  position: relative;
-  margin-top: 5px;
-  left: 50%;
-  transform: translateX(-50%);
   height: 50px;
+  border: 5px solid #a1a5b3;
   border-radius: 50%;
   width: 50px;
   background-color: #dcdfe6;
@@ -176,6 +162,15 @@ body{
   user-select: none;
   z-index: 2;
 }
+#occationtext{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  cursor: default;
+  user-select: none;
+  z-index: 2;
+}
 #datetextextra{
   position: absolute;
   top: 50%;
@@ -203,8 +198,8 @@ body{
   height: 40px;
   width: 160px;
   transition: 0.5s;
+  z-index: 6;
   background-color: #d3738b;
-  z-index: 1;
 }
 #walk{
   position: relative;
@@ -215,6 +210,7 @@ body{
   height: 40px;
   width: 120px;
   transition: 0.5s;
+  z-index: 5;
   background-color: #7186db;
 }
 #fishing{
@@ -226,8 +222,8 @@ body{
   height: 40px;
   width: 120px;
   transition: 0.5s;
+  z-index: 6;
   background-color: #8f658a;
-  z-index: 1;
 }
 #weekend{
   position: relative;
@@ -238,6 +234,7 @@ body{
   height: 40px;
   width: 160px;
   transition: 0.5s;
+  z-index: 5;
   background-color: #f7c187;
 }
 #addnew{
@@ -249,6 +246,7 @@ body{
   height: 40px;
   width: 280px;
   transition: 0.5s;
+  z-index: 5;
   background-color: #58b2a4;
 }
 #reset{
@@ -260,5 +258,6 @@ body{
   height: 40px;
   width: 280px;
   transition: 0.5s;
+  z-index: 5;
   background-color: white;
 }

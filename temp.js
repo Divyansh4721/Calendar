@@ -1,5 +1,17 @@
-function turnonslider()
+function turnonslider(clickval)
 {
+  let allele=document.querySelectorAll('#datex');
+  let htop=allele[1].offsetTop+40;
+  allele=document.querySelectorAll('#date');
+  htop=date[date.length-1].offsetTop+40-htop;
+  {
+    $('#vacation').css('top','-'+htop+'px');
+    $('#walk').css('top','-'+htop+'px');
+    $('#fishing').css('top','-'+htop+'px');
+    $('#weekend').css('top','-'+htop+'px');
+    $('#addnew').css('top','-'+htop+'px');
+    $('#reset').css('top','-'+htop+'px');
+  }
   {
     let i=-160;
     let a=setInterval(function() {
@@ -106,7 +118,7 @@ function turnonslider()
       });
 
       functionName();
-      turnonslider();
+      turnonslider(a);
       a.style.backgroundColor='#5da79b';
       buttonclick=3;
 
@@ -318,12 +330,48 @@ function resetcolorslider()
     }
   }
 }
+//function day typing
+function enterdays(day,month) {
 
-
+  let ndays=0;
+  if(month==1||month==3||month==5||month==7||month==8||month==10||month==12){
+    ndays=31;
+  }
+  else if(month==2){
+    ndays=28;
+  }
+  else{
+    ndays=30;
+  }
+  let extradaystart=0;
+  if(ndays==31){
+    extradaystart=31-day+2;
+  }
+  let count=0;
+  for(let i=0;i<day-1;i++){
+    count++;
+    $('#dates').append('<div id="date" onclick="dateclicked(this)"><span id="datetextextra">'+(extradaystart+i)+'</span></div>');
+  }
+  for(let i=1;i<=ndays;i++){
+    count++;
+    $('#dates').append('<div id="date" onclick="dateclicked(this)"><span id="datetext">'+i+'</span></div>');
+  }
+  let dayleft=0;
+  if(count<35){
+    dayleft=35-count;
+  }
+  else if(count<42){
+    dayleft=42-count;
+  }
+  for(let i=1;i<=dayleft;i++){
+    $('#dates').append('<div id="date" onclick="dateclicked(this)"><span id="datetextextra">'+i+'</span></div>');
+  }
+}
+enterdays(3,1);
 
 //reset button
 {
   $('#reset').click(function() {
     location.reload();
-});
+  });
 }
