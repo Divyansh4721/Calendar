@@ -717,7 +717,6 @@ $('#trigger').click(function() {
     function addevent() {
       this.style.backgroundColor='#5da79b';
       this.style.color='white';
-      console.log($(ab).index(),$(this).index());
       if($(ab).index()<$(this).index()){
         $(ab).nextUntil(this).css("background-color", "#68baad");
         $(ab).nextUntil(this).css("color", "white");
@@ -743,6 +742,22 @@ $('#trigger').click(function() {
       let inele=$(ab).nextUntil(this);
       for (let i = 0; i < inele.length; i++) {
         inele[i].id='date';
+      }
+      if($(ab).index()<$(this).index()){
+        $(ab).nextUntil(this).css("background-color", "white");
+        $(ab).nextUntil(this).css("color", "black");
+        let inele=$(ab).nextUntil(this);
+        for (let i = 0; i < inele.length; i++) {
+          inele[i].id='date';
+        }
+      }
+      else{
+        $(this).nextUntil(ab).css("background-color", "white");
+        $(this).nextUntil(ab).css("color", "black");
+        let inele=$(this).nextUntil(ab);
+        for (let i = 0; i < inele.length; i++) {
+          inele[i].id='date';
+        }
       }
     }
     function dateclicked(a) {
